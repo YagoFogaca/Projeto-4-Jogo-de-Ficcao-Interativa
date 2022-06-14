@@ -1,0 +1,22 @@
+{
+  "name": "projeto-4-jogo-de-ficcao-interativa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YagoFogaca/Projeto-4-Jogo-de-Ficcao-Interativa.git"
+  },
+  "author": "Yago Fogaça",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YagoFogaca/Projeto-4-Jogo-de-Ficcao-Interativa/issues"
+  },
+  "homepage": "https://github.com/YagoFogaca/Projeto-4-Jogo-de-Ficcao-Interativa#readme",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
