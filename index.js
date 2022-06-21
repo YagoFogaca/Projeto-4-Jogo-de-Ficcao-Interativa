@@ -83,7 +83,7 @@ const apresentacao = () => {
     prompt();
     console.clear();
     console.log(
-        `O jogo funciona da seguinte forma: \nSuas escolhas geram impactos na história. \nVocê tem três necessidades: \n\nFome: ${personagem.fome}\n\nSede: ${personagem.sede}\n\nCansaço: ${personagem.cansaco}\n\nEsses três podem levar o personagem durante a história ao hospital e consequentemente, game over. \n\nEsse por sua vez, determina se você ganhou ou perdeu o jogo e para ganhar o jogo você precisa de no minímo 70 pontos no projeto: ${personagem.projeto}\n. `,
+        `O jogo funciona da seguinte forma: \nSuas escolhas geram impactos na história. \nVocê tem três necessidades: \n\nFome: ${personagem.fome}\n\nSede: ${personagem.sede}\n\nCansaço: ${personagem.cansaco}\n\nEsses três podem levar o personagem durante a história ao hospital e consequentemente, game over. \n\nEsse por sua vez, determina se você ganhou ou perdeu o jogo e para ganhar o jogo você precisa de no minímo 70 pontos no projeto. \n\nProjeto: ${personagem.projeto}\n `,
     );
     console.log('\n<<<<Aperte ENTER para continuar>>>>');
     prompt();
@@ -560,7 +560,7 @@ const decimaSextaPergunta = decimaQuintaPergunta => {
 };
 const validaPersonagem = () => {
     if (personagem.cansaco >= 100) {
-        console.log('\nVocê morreu de cansaço');
+        console.log('\nVocê foi para o hospital por estar muito cansado. \nGAME OVER!!!!!!!!!');
         let jogarDeNovo = prompt('\nDeseja jogar novamente? [S/N] ').toUpperCase();
         while (jogarDeNovo != 'S' && jogarDeNovo != 'N') {
             console.log('\nOpção invalida');
@@ -580,7 +580,7 @@ const validaPersonagem = () => {
             return 2;
         }
     } else if (personagem.fome >= 100) {
-        console.log('Você morreu de fome');
+        console.log('Você foi para o hospital por estar sem comer por muitas horas. \nGAME OVER!!!!!!!!!');
         let jogarDeNovo = prompt('Deseja jogar novamente? [S/N] ').toUpperCase();
         while (jogarDeNovo != 'S' && jogarDeNovo != 'N') {
             console.log('\nOpção invalida');
@@ -600,7 +600,7 @@ const validaPersonagem = () => {
             return 2;
         }
     } else if (personagem.sede >= 100) {
-        console.log('Você morreu de sede');
+        console.log('Você foi para o hospital por estar sem desidratado. \nGAME OVER!!!!!!!!!');
         let jogarDeNovo = prompt('Deseja jogar novamente? [S/N] ').toUpperCase();
         while (jogarDeNovo != 'S' && jogarDeNovo != 'N') {
             console.log('\nOpção invalida');
@@ -625,15 +625,15 @@ const validaPersonagem = () => {
 };
 const validaFinal = () => {
     if (personagem.projeto >= 95) {
-        console.log('\nVocê conseguiu entregar o trabalho.\nE tirou nota 10. Nota máxima. Parabéns!!');
+        console.log('\n\nVocê conseguiu entregar o trabalho.\nE tirou nota 10. Nota máxima. Parabéns!!');
     } else if (personagem.projeto >= 85) {
-        console.log('\nVocê conseguiu entregar o trabalho.\nE tirou nota 9. Mandou bem. Parabéns!');
+        console.log('\n\nVocê conseguiu entregar o trabalho.\nE tirou nota 9. Mandou bem. Parabéns!');
     } else if (personagem.projeto >= 80) {
-        console.log('\nVocê conseguiu entregar o trabalho.\nE tirou nota 8. Está no caminho Parabéns');
+        console.log('\n\nVocê conseguiu entregar o trabalho.\nE tirou nota 8. Está no caminho Parabéns');
     } else if (personagem.projeto >= 70) {
-        console.log('\nVocê conseguiu entregar o trabalho.\nE tirou nota 7. Poderia ser melhor.');
+        console.log('\n\nVocê conseguiu entregar o trabalho.\nE tirou nota 7. Poderia ser melhor.');
     } else {
-        console.log('\nVocê não conseguiu entregar o trabalho.\nE tirou nota 0. Vergonha da Profission.');
+        console.log('\n\nVocê não conseguiu entregar o trabalho.\nE tirou nota 0. Vergonha da Profission.');
     }
 };
 function jogo() {
@@ -758,6 +758,11 @@ function jogo() {
             break dias;
         }
         d++;
+        console.log(`Depois de um dia inteiro você está com o seguinte status:\n\nFome: ${personagem.fome} \n\nSede: ${personagem.sede} \n\nCansaço: ${personagem.cansaco} \n\nAndamento do projeto final: ${personagem.projeto.toFixed(0)}%`);
+        console.log(`\n\nLembre-se que se sua fome, sede ou cansaço chegar a 100 você vai para o hospital e é game over.\n\nE o projeto precisa ter no minimo 75% para ter nota, se não sua nota será zero.`);
+        console.log('\n<<<<Aperte ENTER para continuar>>>>');
+        prompt();
+        console.clear();
     }
 }
 jogo();
