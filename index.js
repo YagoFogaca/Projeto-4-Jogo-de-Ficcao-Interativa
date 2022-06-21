@@ -558,11 +558,14 @@ const decimaSextaPergunta = decimaQuintaPergunta => {
         }
     }
 };
-
 const validaPersonagem = () => {
     if (personagem.cansaco >= 100) {
-        console.log('Você morreu de cansaço');
-        let jogarDeNovo = prompt('Deseja jogar novamente? [S/N]').toUpperCase();
+        console.log('\nVocê morreu de cansaço');
+        let jogarDeNovo = prompt('\nDeseja jogar novamente? [S/N] ').toUpperCase();
+        while (jogarDeNovo != 'S' && jogarDeNovo != 'N') {
+            console.log('\nOpção invalida');
+            jogarDeNovo = prompt('\nDeseja jogar novamente? [S/N] ').toUpperCase();
+        }
         if (jogarDeNovo == 'S') {
             personagem.cansaco = 0;
             personagem.fome = 0;
@@ -578,7 +581,11 @@ const validaPersonagem = () => {
         }
     } else if (personagem.fome >= 100) {
         console.log('Você morreu de fome');
-        let jogarDeNovo = prompt('Deseja jogar novamente? [S/N]').toUpperCase();
+        let jogarDeNovo = prompt('Deseja jogar novamente? [S/N] ').toUpperCase();
+        while (jogarDeNovo != 'S' && jogarDeNovo != 'N') {
+            console.log('\nOpção invalida');
+            jogarDeNovo = prompt('\nDeseja jogar novamente? [S/N] ').toUpperCase();
+        }
         if (jogarDeNovo == 'S') {
             personagem.cansaco = 0;
             personagem.fome = 0;
@@ -594,7 +601,11 @@ const validaPersonagem = () => {
         }
     } else if (personagem.sede >= 100) {
         console.log('Você morreu de sede');
-        let jogarDeNovo = prompt('Deseja jogar novamente? [S/N]').toUpperCase();
+        let jogarDeNovo = prompt('Deseja jogar novamente? [S/N] ').toUpperCase();
+        while (jogarDeNovo != 'S' && jogarDeNovo != 'N') {
+            console.log('\nOpção invalida');
+            jogarDeNovo = prompt('\nDeseja jogar novamente? [S/N] ').toUpperCase();
+        }
         if (jogarDeNovo == 'S') {
             personagem.cansaco = 0;
             personagem.fome = 0;
